@@ -16,9 +16,12 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
   let
     configuration = { pkgs, ... }: {
+      # DeterminateSystems経由の場合、DeterminateSystemsはNixのインストール自体を管理するためこのオプションが必要
       nix.enable = false;
+
       nixpkgs.config.allowUnfree = true;
 
+      # home-managerではGUIアプリケーションを管理できないためこちらに記載する
       environment.systemPackages = with pkgs; [
         google-chrome
         vscode
