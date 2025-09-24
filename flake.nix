@@ -25,6 +25,7 @@
       environment.systemPackages = with pkgs; [
         google-chrome
         vscode
+        obsidian
       ];
 
       programs.zsh.enable = true;
