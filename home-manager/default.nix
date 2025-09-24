@@ -4,7 +4,6 @@
 
   home.packages = with pkgs; [
     claude-code
-    gh
   ];
 
   programs.zsh = {
@@ -24,6 +23,10 @@
       init.defaultBranch = "main";
       core.editor = "code";
     };
+  };
+
+  programs.gh = {
+    enable = true;
   };
 
   home.stateVersion = "25.05";
